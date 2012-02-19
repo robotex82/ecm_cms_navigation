@@ -1,2 +1,1 @@
-module EcmCmsNavigation
-end
+require 'ecm/cms_core'
