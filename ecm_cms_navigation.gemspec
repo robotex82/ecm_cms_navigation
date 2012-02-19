@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.summary = "Provides database backend for simple navigation"
   s.description = "Provides database backend for simple navigation"
   s.files = Dir["{app,lib,config}/**/*"] + ["MIT-LICENSE", "Rakefile", "Gemfile", "README.rdoc"]
-  s.version = "0.0.3"
+  s.version = "0.0.4"
   s.add_dependency("awesome_nested_set")
   s.add_dependency("simple-navigation")
 end
