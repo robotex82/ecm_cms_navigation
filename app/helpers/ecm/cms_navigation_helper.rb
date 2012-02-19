@@ -2,21 +2,16 @@ module Ecm::CmsNavigationHelper
   def cms_render_navigation(name)
     navigation = Navigation.where(:name => name).first
     
-    return "#{name} navigation not found." unless navigation
+    return I18n.t('ecm.navigation.navigation_not_found', :name => name) unless navigation
     
     items = []
     navigation.navigation_items.roots.all.each do |navigation_item|
       items << build_navigation(navigation_item)  
     end
     
-    return "#{name} navigation is empty." if items.empty?
-    puts items
+    return I18n.t('ecm.navigation.navigation_empty', :name => name) if items.empty?
     
-    if navigation.level.empty?
-      render_navigation :items => items, :expand_all => navigation.expand
-    else
-      render_navigation :items => items, :expand_all => navigation.expand, :level => eval(navigation.level)
-    end  
+    render_navigation :items => items
   end
   
   def build_navigation(navigation_item)
