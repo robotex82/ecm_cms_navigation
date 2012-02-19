@@ -1,1 +1,1 @@
-require 'ecm/cms_core'
+require 'ecm/cms_navigation'

@@ -1,4 +1,4 @@
-module Ecm::NavigationHelper
+module Ecm::CmsNavigationHelper
   def cms_render_navigation(name)
     navigation = Navigation.where(:name => name).first
     
