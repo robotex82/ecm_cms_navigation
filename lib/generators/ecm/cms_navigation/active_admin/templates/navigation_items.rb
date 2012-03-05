@@ -1,4 +1,3 @@
-include ActionView::Helpers::FormOptionsHelper
 include CollectiveIdea::Acts::NestedSet::Helper 
 
 ActiveAdmin.register NavigationItem do
@@ -30,7 +29,7 @@ ActiveAdmin.register NavigationItem do
 
   form do |f|
     f.inputs do
-      f.input :navigation, :as => :select, :collection => options_from_collection_for_select(Navigation.all, :id, :to_s)
+      f.input :navigation
       f.input :parent, :as => :select, :collection => nested_set_options(NavigationItem, f.object) { |ni| "#{'&#160;&#160;&#160;&#160;' * ni.level} |--#{ni.name}".html_safe }
       f.input :name
       f.input :url

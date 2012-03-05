@@ -34,7 +34,9 @@ de:
     updated_at: "Aktualisiert"
   ecm:
     navigation:
+      navigation_empty: "Navigation \"%{name}\" ist leer."
       no_subitems: "Keine Unterpunkte vorhanden"
+      navigation_not_found: "Navigation \"%{name}\" nicht gefunden."
   formtastic:
     :yes: 'Ja'
     :no: 'Nein'

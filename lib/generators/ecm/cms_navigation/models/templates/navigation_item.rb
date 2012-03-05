@@ -20,13 +20,17 @@ class NavigationItem < ActiveRecord::Base
   
   before_validation :set_navigation, :if => Proc.new { |navigation_item| navigation_item.child? }
   after_save :update_children_navigations!
+
+  def set_navigation
+    self.navigation = self.parent.navigation
+  end
   
   def set_navigation!
-    self.navigation = self.parent.navigation
-    self.save
+    self.set_navigation
+    self.save!
   end
   
   def update_children_navigations!
-    self.children.map(&:set_navigation!)
+    self.children.map(&:"set_navigation!")
   end
 end

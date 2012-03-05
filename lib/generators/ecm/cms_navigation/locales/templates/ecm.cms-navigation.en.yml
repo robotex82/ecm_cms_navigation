@@ -34,7 +34,9 @@ en:
     updated_at: "Updated at"
   ecm:
     navigation:
+      navigation_empty: "Navigation \"%{name}\" is empty"
       no_subitems: "No Subitems found"
+      navigation_not_found: "Navigation \"%{name}\" not found"
   formtastic:
     :yes: 'Ja'
     :no: 'Nein'
