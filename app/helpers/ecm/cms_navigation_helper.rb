@@ -11,8 +11,6 @@ module Ecm::CmsNavigationHelper
     
     return I18n.t('ecm.navigation.navigation_empty', :name => name) if items.empty?
     
-    options[:items] = items
-    
     render_navigation(options)
   end
   
