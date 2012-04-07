@@ -41,13 +41,13 @@ ActiveAdmin.register Ecm::CmsNavigation::NavigationItem do
   
   index :title => Ecm::CmsNavigation::NavigationItem.model_name.human(:count => 10) do
     column  do |navigation_item|
-      link_to('&#9650;'.html_safe, move_up_admin_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.left_sibling
+      link_to('&#9650;'.html_safe, move_up_admin_ecm_cms_navigation_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.left_sibling
     end
     column  do |navigation_item|
-      link_to('&#9660;'.html_safe, move_down_admin_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.right_sibling
+      link_to('&#9660;'.html_safe, move_down_admin_ecm_cms_navigation_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.right_sibling
     end
     column :navigation do |navigation_item|
-      link_to navigation_item.navigation, admin_navigation_path(navigation_item.navigation)
+      link_to navigation_item.navigation, admin_ecm_cms_navigation_navigation_path(navigation_item.navigation)
     end
     column :indented_name
     column :url
@@ -59,10 +59,10 @@ ActiveAdmin.register Ecm::CmsNavigation::NavigationItem do
   show :title => :name do
     attributes_table do
       row :navigation do |navigation_item|
-        link_to navigation_item.navigation, admin_navigation_path(navigation_item.navigation)
+        link_to navigation_item.navigation, admin_ecm_cms_navigation_navigation_path(navigation_item.navigation)
       end
       row :parent do |navigation_item|
-        link_to_if navigation_item.parent, navigation_item.parent, admin_navigation_item_path(navigation_item.parent)
+        link_to_if navigation_item.parent, navigation_item.parent, admin_ecm_cms_navigation_navigation_item_path(navigation_item.parent)
       end
       row :name
       row :url

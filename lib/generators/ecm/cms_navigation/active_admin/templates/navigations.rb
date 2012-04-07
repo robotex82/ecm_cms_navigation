@@ -26,10 +26,10 @@ ActiveAdmin.register Ecm::CmsNavigation::Navigation do
       if ecm_cms_navigation_navigation.has_navigation_items?
         table_for ecm_cms_navigation_navigation.navigation_items.order(:lft) do
           column  do |navigation_item|
-            link_to('&#9650;'.html_safe, move_up_admin_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.left_sibling
+            link_to('&#9650;'.html_safe, move_up_admin_ecm_cms_navigation_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.left_sibling
           end
           column  do |navigation_item|
-            link_to('&#9660;'.html_safe, move_down_admin_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.right_sibling
+            link_to('&#9660;'.html_safe, move_down_admin_ecm_cms_navigation_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.right_sibling
           end
           column Ecm::CmsNavigation::NavigationItem.human_attribute_name(:indented_name), :indented_name
           column Ecm::CmsNavigation::NavigationItem.human_attribute_name(:url), :url
