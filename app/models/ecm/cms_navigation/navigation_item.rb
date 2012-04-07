@@ -1,4 +1,6 @@
 class Ecm::CmsNavigation::NavigationItem < ActiveRecord::Base
+  self.table_name 'ecm_cms_navigation_navigation_items'
+  
   belongs_to :navigation, :class_name => 'Ecm::CmsNavigation::Navigation'
   
   acts_as_nested_set :dependent => :destroy, :counter_cache => :children_count, :scope => :navigation_id

@@ -1,4 +1,6 @@
 class Ecm::CmsNavigation::Navigation < ActiveRecord::Base
+  self.table_name 'ecm_cms_navigation_navigations'
+
   has_many :navigation_items, :dependent => :destroy, :class_name => 'Ecm::CmsNavigation::NavigationItem'
   
   validates :name, :presence => true, :uniqueness => { :scope => :locale }, :format => { :with => /[a-z\-]{1,}/i }
