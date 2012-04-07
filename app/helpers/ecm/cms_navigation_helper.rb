@@ -4,14 +4,16 @@ module Ecm::CmsNavigationHelper
     
     return I18n.t('ecm.navigation.navigation_not_found', :name => name) unless navigation
     
-    items = []
+    options[:items] = []
     navigation.navigation_items.roots.all.each do |navigation_item|
-      items << build_navigation(navigation_item)  
+      options[:items] << build_navigation(navigation_item)  
     end
     
     return I18n.t('ecm.navigation.navigation_empty', :name => name) if items.empty?
     
-    render_navigation :items => items, options
+    options[:items] = items
+    
+    render_navigation(options)
   end
   
   def build_navigation(navigation_item)
