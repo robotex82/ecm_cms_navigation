@@ -1,6 +1,6 @@
 module Ecm::CmsNavigationHelper
   def cms_render_navigation(name, options = {})
-    navigation = Navigation.where(:name => name).first
+    navigation = Ecm::CmsNavigation::Navigation.where(:name => name).first
     
     return I18n.t('ecm.navigation.navigation_not_found', :name => name) unless navigation
     
