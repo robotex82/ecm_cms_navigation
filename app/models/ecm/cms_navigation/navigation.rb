@@ -1,5 +1,5 @@
 class Ecm::CmsNavigation::Navigation < ActiveRecord::Base
-  self.table_name 'ecm_cms_navigation_navigations'
+  self.table_name = 'ecm_cms_navigation_navigations'
 
   has_many :navigation_items, :dependent => :destroy, :class_name => 'Ecm::CmsNavigation::NavigationItem'
   

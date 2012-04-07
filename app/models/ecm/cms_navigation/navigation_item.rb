@@ -1,5 +1,5 @@
 class Ecm::CmsNavigation::NavigationItem < ActiveRecord::Base
-  self.table_name 'ecm_cms_navigation_navigation_items'
+  self.table_name = 'ecm_cms_navigation_navigation_items'
   
   belongs_to :navigation, :class_name => 'Ecm::CmsNavigation::Navigation'
   
