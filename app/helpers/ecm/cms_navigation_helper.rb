@@ -26,7 +26,8 @@ module Ecm::CmsNavigationHelper
     end
     
     begin
-      output[:options] = eval(navigation_item.options)
+      options = eval(navigation_item.options) 
+      output[:options] = options if options.is_a?(Hash)
     rescue
       logger.debug "Invalid navigation item options: #{navigation_item.options}"
     end  
