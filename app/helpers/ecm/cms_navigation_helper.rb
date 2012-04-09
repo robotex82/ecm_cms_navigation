@@ -20,9 +20,17 @@ module Ecm::CmsNavigationHelper
       navigation_item.children.each do |child|
         items << build_navigation(child)
       end
-      return {:key => navigation_item.key, :name => navigation_item.name, :url => eval(navigation_item.url), :items => items }
+      output = { :key => navigation_item.key, :name => navigation_item.name, :url => eval(navigation_item.url), :items => items }
     else  
-      return {:key => navigation_item.key, :name => navigation_item.name, :url => eval(navigation_item.url) }
+      output = { :key => navigation_item.key, :name => navigation_item.name, :url => eval(navigation_item.url) }
     end
+    
+    begin
+      output[:options] = eval(navigation_item.options)
+    rescue
+      logger.debug "Invalid navigation item options: #{navigation_item.options}"
+    end  
+    
+    return output
   end
 end

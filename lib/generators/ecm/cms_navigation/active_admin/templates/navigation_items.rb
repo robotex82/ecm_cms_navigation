@@ -7,24 +7,24 @@ ActiveAdmin.register Ecm::CmsNavigation::NavigationItem do
     @navigation_item = Ecm::CmsNavigation::NavigationItem.find(params[:id])
     
     unless @navigation_item.left_sibling
-      redirect_to :back, :notice => I18n.t('awesome_nested_set.illegal_move_up', :resource => @navigation_item.class.human_name ) 
+      redirect_to :back, :notice => I18n.t('awesome_nested_set.illegal_move_up', :resource => @navigation_item.class.model_name.human ) 
       return
     end  
     
     @navigation_item.move_left
-    redirect_to :back, :notice => I18n.t('awesome_nested_set.moved_up', :resource => @navigation_item.class.human_name )
+    redirect_to :back, :notice => I18n.t('awesome_nested_set.moved_up', :resource => @navigation_item.class.model_name.human )
   end
 
   member_action :move_down do
     @navigation_item = Ecm::CmsNavigation::NavigationItem.find(params[:id])
     
     unless @navigation_item.right_sibling
-      redirect_to :back, :notice => I18n.t('awesome_nested_set.illegal_move_down', :resource => @navigation_item.class.human_name ) 
+      redirect_to :back, :notice => I18n.t('awesome_nested_set.illegal_move_down', :resource => @navigation_item.class.model_name.human ) 
       return
     end  
     
     @navigation_item.move_right
-    redirect_to :back, :notice => I18n.t('awesome_nested_set.moved_down', :resource => @navigation_item.class.human_name )
+    redirect_to :back, :notice => I18n.t('awesome_nested_set.moved_down', :resource => @navigation_item.class.model_name.human )
   end
 
   form do |f|
