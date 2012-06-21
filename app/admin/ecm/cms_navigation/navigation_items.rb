@@ -41,12 +41,6 @@ if defined?(ActiveAdmin)
     end
     
     index :title => Ecm::CmsNavigation::NavigationItem.model_name.human(:count => 10) do
-      column  do |navigation_item|
-        link_to('&#9650;'.html_safe, move_up_admin_ecm_cms_navigation_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.left_sibling
-      end
-      column  do |navigation_item|
-        link_to('&#9660;'.html_safe, move_down_admin_ecm_cms_navigation_navigation_item_path(navigation_item), :class => "arrow") if navigation_item.right_sibling
-      end
       column :navigation do |navigation_item|
         link_to navigation_item.navigation, admin_ecm_cms_navigation_navigation_path(navigation_item.navigation)
       end
