@@ -9,31 +9,10 @@ de:
     moved_down: "%{resource} nach unten verschoben"
     illegal_move_up: "Konnte %{resource} nicht nach oben verschieben"
     illegal_move_down: "Konnte %{resource} nicht nach unten verschieben"
-  activerecord:
-    attributes:
-      ecm/cms_navigation/navigation:
-        expand: "Ausklappen"
-        level: "Level"
-        locale: "Sprache"
-        name: "Name"
-      ecm/cms_navigation/navigation_item: 
-        indented_name: "Name"
-        key: "Schlüssel"
-        name: "Name"
-        options: "Optionen"
-        parent: "Unterpunkt von"
-        url: "Zieladresse" 
-    models:
-      ecm/cms_navigation/navigation:
-        one: "Navigation"
-        other: "Navigationen"
-      ecm/cms_navigation/navigation_item:
-        one: "Navigationspunkt"
-        other: "Navigationspunkte"
-  attributes:
-    created_at: "Erstellt"
-    updated_at: "Aktualisiert"
   ecm:
+    cms:
+      active_admin:
+        menu: "CMS"
     navigation:
       navigation_empty: "Navigation \"%{name}\" ist leer."
       no_subitems: "Keine Unterpunkte vorhanden"

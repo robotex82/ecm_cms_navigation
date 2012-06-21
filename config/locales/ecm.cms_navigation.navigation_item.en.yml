@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    attributes:
+      ecm/cms_navigation/navigation_item: 
+        created_at: "created at"
+        indented_name: "name"
+        key: "key"
+        name: "name"
+        options: "options"
+        parent: "parent"
+        updated_at: "updated at"
+        url: "url" 
+    models:
+      ecm/cms_navigation/navigation_item:
+        one: "navigation item"
+        other: "navigation items"

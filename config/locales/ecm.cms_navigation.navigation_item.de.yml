@@ -1,0 +1,16 @@
+de:
+  activerecord:
+    attributes:
+      ecm/cms_navigation/navigation_item: 
+        created_at: "Erstellt"
+        indented_name: "Name"
+        key: "Schlüssel"
+        name: "Name"
+        options: "Optionen"
+        parent: "Unterpunkt von"
+        updated_at: "Aktualisiert"
+        url: "Zieladresse" 
+    models:
+      ecm/cms_navigation/navigation_item:
+        one: "Navigationspunkt"
+        other: "Navigationspunkte"

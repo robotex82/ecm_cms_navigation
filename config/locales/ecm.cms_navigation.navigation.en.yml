@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    attributes:
+      ecm/cms_navigation/navigation:
+        created_at: "created at"
+        expand: "epand"
+        level: "level"
+        locale: "language"
+        name: "name"
+        updated_at: "updated at"
+    models:
+      ecm/cms_navigation/navigation:
+        one: "navigation"
+        other: "navigations"

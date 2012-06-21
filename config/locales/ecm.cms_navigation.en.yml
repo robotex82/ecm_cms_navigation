@@ -1,0 +1,26 @@
+en:
+  :false: "no"
+  :true: "yes"
+  active_admin:
+    move_up: "Up"
+    move_down: "Down"
+  awesome_nested_set:
+    moved_up: "Moved %{resource} up"
+    moved_down: "Moved %{resource} down"
+    illegal_move_up: "Could not move %{resource} up"
+    illegal_move_down: "Could not move %{resource} down"
+  ecm:
+    cms:
+      active_admin:
+        menu: "cms"
+    navigation:
+      navigation_empty: "Navigation \"%{name}\" is empty."
+      no_subitems: "No subitems found"
+      navigation_not_found: "Navigation \"%{name}\" not found."
+  formtastic:
+    :yes: 'Yes'
+    :no: 'No'
+    :create: 'Create %{model}'
+    :update: 'Update %{model}'
+    :submit: 'Save %{model}'
+    :required: 'required'

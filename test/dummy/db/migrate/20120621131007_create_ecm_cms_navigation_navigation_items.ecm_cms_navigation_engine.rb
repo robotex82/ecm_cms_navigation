@@ -1,6 +1,7 @@
+# This migration comes from ecm_cms_navigation_engine (originally 2)
 class CreateEcmCmsNavigationNavigationItems < ActiveRecord::Migration
-  def self.up
-    create_table :navigation_items do |t|
+  def change
+    create_table :ecm_cms_navigation_navigation_items do |t|
       t.string :key
       t.string :name
       t.string :url
@@ -13,9 +14,5 @@ class CreateEcmCmsNavigationNavigationItems < ActiveRecord::Migration
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :navigation_items
   end
 end

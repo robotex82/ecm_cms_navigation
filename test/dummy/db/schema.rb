@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120407144000) do
+ActiveRecord::Schema.define(:version => 20120621131007) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,36 +46,7 @@ ActiveRecord::Schema.define(:version => 20120407144000) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-  create_table "ecm_cms_core_folders", :force => true do |t|
-    t.integer  "parent_id"
-    t.string   "basename"
-    t.string   "pathname"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.integer  "depth"
-    t.integer  "children_count",  :default => 0
-    t.integer  "templates_count", :default => 0
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
-  create_table "ecm_cms_core_templates", :force => true do |t|
-    t.integer  "folder_id"
-    t.string   "pathname"
-    t.string   "basename"
-    t.string   "title"
-    t.text     "meta_description"
-    t.text     "body"
-    t.string   "layout"
-    t.string   "locale"
-    t.string   "format"
-    t.string   "handler"
-    t.boolean  "partial",          :default => false
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-  end
-
-  create_table "navigation_items", :force => true do |t|
+  create_table "ecm_cms_navigation_navigation_items", :force => true do |t|
     t.string   "key"
     t.string   "name"
     t.string   "url"
@@ -89,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20120407144000) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "navigations", :force => true do |t|
+  create_table "ecm_cms_navigation_navigations", :force => true do |t|
     t.string   "locale"
     t.string   "name"
     t.datetime "created_at", :null => false

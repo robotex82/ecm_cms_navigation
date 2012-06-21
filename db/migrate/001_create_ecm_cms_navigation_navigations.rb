@@ -1,14 +1,10 @@
 class CreateEcmCmsNavigationNavigations < ActiveRecord::Migration
-  def self.up
-    create_table :navigations do |t|
+  def change
+    create_table :ecm_cms_navigation_navigations do |t|
       t.string :locale
       t.string :name
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :navigations
   end
 end

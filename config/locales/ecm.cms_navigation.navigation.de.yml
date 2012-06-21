@@ -1,0 +1,14 @@
+de:
+  activerecord:
+    attributes:
+      ecm/cms_navigation/navigation:
+        created_at: "Erstellt"
+        expand: "Ausklappen"
+        level: "Level"
+        locale: "Sprache"
+        name: "Name"
+        updated_at: "Aktualisiert"
+    models:
+      ecm/cms_navigation/navigation:
+        one: "Navigation"
+        other: "Navigationen"
