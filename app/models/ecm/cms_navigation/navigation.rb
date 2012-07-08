@@ -15,7 +15,7 @@ class Ecm::CmsNavigation::Navigation < ActiveRecord::Base
   before_validation :downcase_name
   
   def downcase_name
-    self.name.downcase!
+    self.name.downcase! unless self.name.blank?
   end  
   
   def has_navigation_items?
