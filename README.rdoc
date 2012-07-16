@@ -1,3 +1,41 @@
-= EcmCmsNavigation
+= ECM::CMS::Navigation
+
+{<img src="https://secure.travis-ci.org/robotex82/ecm_cms_navigation.png?branch=master" alt="Build Status" />}[http://travis-ci.org/robotex82/ecm_cms_navigation]
+
+= Purpose
+
+Provides database backed navigations on top of simple navigation and active admin.
+
+= Features
+
+TODO
+
+= Installation
+
+Add the gem to your gemfile:
+
+  gem 'ecm_cms_navigation'
+  
+Refresh your bundle:
+
+  > bundle install
+  
+Install migrations:
+ 
+  > rake ecm_cms_navigation_engine:install:migrations
+  
+Migrate:
+
+  > rake db:migrate   
+  
+= Usage
+
+Todo
+  
+= Todo
+
+TODO
+
+= License
 
 This project rocks and uses MIT-LICENSE.
