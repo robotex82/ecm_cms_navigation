@@ -1,13 +1,3 @@
-require 'rubygems'
-
-require 'simple-navigation'
-require 'awesome_nested_set'
-
-# Ecm::Admin should do this!
-require 'activeadmin' 
-require 'sass-rails'
-require 'meta_search'
-
 module Ecm
   module CmsNavigation
     class Engine < Rails::Engine
@@ -24,7 +14,7 @@ module Ecm
         ApplicationController.helper(Ecm::CmsNavigationHelper)
       end  
       
-      initializer :ecm_pictures_engine do
+      initializer :ecm_cms_navigation_engine do
         ActiveAdmin.setup do |active_admin_config|
           active_admin_config.load_paths += Dir[File.dirname(__FILE__) + '/../../../app/admin']
         end

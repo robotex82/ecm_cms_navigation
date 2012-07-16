@@ -16,20 +16,8 @@ gem "jquery-rails"
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-# gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
-# gem 'ecm_admin', :git => 'git://github.com/robotex82/ecm_admin.git', :branch => 'rails-3-2-active-admin'
-
-# gem 'awesome_nested_set'
-# gem 'ecm_cms_core', :git => 'git://github.com/robotex82/ecm_cms_core.git', :branch => 'rails-3-2'
-
-# Gems used only for assets and not required
-# in production environments by default.
-#group :assets do
-#  gem 'sass-rails',   '~> 3.2.3'
-#  gem 'coffee-rails', '~> 3.2.1'
-#
-#  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-#  gem 'therubyracer'
-#
-#  gem 'uglifier', '>= 1.0.3'
-#end
+# Travis CI
+unless ENV['TRAVIS_RUBY_VERSION'].nil?
+  gem 'pg'
+  gem 'mysql2'
+end

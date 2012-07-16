@@ -1,3 +1,4 @@
+# This migration comes from ecm_cms_navigation_engine (originally 2)
 class CreateEcmCmsNavigationNavigationItems < ActiveRecord::Migration
   def change
     create_table :ecm_cms_navigation_navigation_items do |t|
