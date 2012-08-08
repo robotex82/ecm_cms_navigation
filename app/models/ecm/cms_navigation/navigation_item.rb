@@ -18,9 +18,9 @@ class Ecm::CmsNavigation::NavigationItem < ActiveRecord::Base
   # default_scope
   default_scope :order => [:navigation_id, :lft]
   
-  # friendly id
-  extend FriendlyId
-  friendly_id :name, :use => :slugged
+#  # friendly id
+#  extend FriendlyId
+#  friendly_id :name, :use => :slugged
   
   # validations
   validates :name, :presence => true
@@ -44,9 +44,21 @@ class Ecm::CmsNavigation::NavigationItem < ActiveRecord::Base
   
   def to_s
     self.name
-  end    
+  end  
   
   def update_children_navigations!
     self.children.map(&:"set_navigation!")
+  end
+  
+  def evaled_url
+    eval(self.url)
+  end
+  
+  def pathname
+    pathname = self.evaled_url.split("/")[1..-2].join("/") + "/"
+  end
+  
+  def basename
+    self.evaled_url.split("/").pop  
   end
 end

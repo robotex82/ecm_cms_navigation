@@ -21,6 +21,10 @@ class Ecm::CmsNavigation::Navigation < ActiveRecord::Base
   validates :locale,  :inclusion => I18n.available_locales.map(&:to_s), :unless => Proc.new { |navigation| navigation.locale.blank? }
 
   # public methods
+  def display_name
+    prefix = "[#{self.locale}] " if self.locale.present?
+    "#{prefix}#{self.name}"
+  end  
   
   def to_s
     "#{self.locale}: #{self.name}"

@@ -10,6 +10,7 @@ class CreateEcmCmsNavigationNavigationItems < ActiveRecord::Migration
       t.references :navigation
       
       # awesome nested set
+      t.integer :depth
       t.integer :parent_id
       t.integer :lft
       t.integer :rgt
