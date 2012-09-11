@@ -14,9 +14,9 @@ de:
       active_admin:
         menu: "CMS"
     navigation:
-      navigation_empty: "Navigation \"%{locale}: %{name}\" ist leer."
+      navigation_empty: "Navigation  %{name} (%{lang}) ist leer."
       no_subitems: "Keine Unterpunkte vorhanden"
-      navigation_not_found: "Navigation \"%{locale}: %{name}\" nicht gefunden."
+      navigation_not_found: "Navigation %{name} (%{lang}) nicht gefunden."
   formtastic:
     :yes: 'Ja'
     :no: 'Nein'

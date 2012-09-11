@@ -3,14 +3,15 @@ module Ecm::CmsNavigationHelper
  
     navigation = Ecm::CmsNavigation::Navigation.where(:name => name.to_s, :locale => I18n.locale.to_s).first
 
-    return I18n.t('ecm.navigation.navigation_not_found', {:locale => I18n.locale.to_s, :name => name.to_s}) unless navigation
+    return I18n.t('ecm.navigation.navigation_not_found', {:lang => I18n.locale.to_s, :name => name.to_s}) unless navigation
  
     options[:items] = []
     navigation.navigation_items.roots.all.each do |navigation_item|
       options[:items] << build_navigation(navigation_item)  
     end
      
-    return I18n.t('ecm.navigation.navigation_empty', :name => name, :locale => I18n.locale.to_s) if options[:items].empty?  
+    # return I18n.t('ecm.navigation.navigation_empty', {:locale => I18n.locale.to_s, :name => name}) if options[:items].empty?
+    return I18n.t('ecm.navigation.navigation_empty', :lang => I18n.locale.to_s, :name => name) if options[:items].empty?    
     render_navigation(options)
   end
   
