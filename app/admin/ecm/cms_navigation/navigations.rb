@@ -37,7 +37,8 @@ if defined?(ActiveAdmin)
             column Ecm::CmsNavigation::NavigationItem.human_attribute_name(:key), :key
             column Ecm::CmsNavigation::NavigationItem.human_attribute_name(:options), :options
             column do |navigation_item|
-              link_to I18n.t('active_admin.view'), admin_ecm_cms_navigation_navigation_item_path(navigation_item), :class => "member_link view_link"
+              link_to(I18n.t('active_admin.view'), [:admin, navigation_item], :class => "member_link view_link") + 
+              link_to(I18n.t('active_admin.edit'), [:edit, :admin, navigation_item], :class => "member_link edit_link")
             end
           end
         else

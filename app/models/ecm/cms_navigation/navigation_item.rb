@@ -49,16 +49,4 @@ class Ecm::CmsNavigation::NavigationItem < ActiveRecord::Base
   def update_children_navigations!
     self.children.map(&:"set_navigation!")
   end
-  
-  def evaled_url
-    eval(self.url)
-  end
-  
-  def pathname
-    pathname = self.evaled_url.split("/")[1..-2].join("/") + "/"
-  end
-  
-  def basename
-    self.evaled_url.split("/").pop  
-  end
 end

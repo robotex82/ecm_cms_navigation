@@ -49,20 +49,6 @@ if defined?(ActiveAdmin)
       column :key
       column :options
       default_actions
-      column ::Ecm::CmsCore::Template.model_name.human do |navigation_item|
-        if defined?(::Ecm::CmsCore::Template)      
-          template = ::Ecm::CmsCore::Template.where(:pathname => navigation_item.pathname).where(:basename => navigation_item.basename).first
-          output = ""
-          if template
-            output << link_to(I18n.t("active_admin.view"), [:admin, template])
-            output << "&nbsp;"
-            output << link_to(I18n.t("active_admin.edit"), admin_ecm_cms_core_template_path(template))
-#          else
-#            output = link_to(I18n.t("active_admin.create_model", :model => ::Ecm::CmsCore::Template.model_name.human), new_admin_ecm_cms_core_template_path, :class => "member_link create_link")          
-          end
-          output.html_safe
-        end  
-      end
     end
     
     show :title => :name do
